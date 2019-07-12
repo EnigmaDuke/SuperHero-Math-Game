@@ -1,0 +1,150 @@
+:root{
+  --dcRed:#CC4125;
+  --dcBlue:#0076F2;
+  --dcYellow:#F3D405;
+
+  --marvelRed:#ED1C25;
+  --marvelYellow:#FCCA05;
+  --marvelBlue:#67C7EB;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background-color:var(--dcBlue);
+}
+
+a{
+  text-decoration: none;
+  color:#000;
+}
+
+.clear{
+  clear: both;
+}
+
+/* Hide content */
+.hide{
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.logo{
+  position: relative;
+  top:0;
+  left:0;
+  cursor: pointer;
+}
+
+header{
+  padding:20px;
+
+}
+
+header img{
+  width:100px;
+  margin:0 auto;
+}
+
+.left{
+  float:left;
+}
+
+header ul{
+  list-style-type: none;
+  float:right;
+  position: relative;
+  top:-35px;
+}
+
+/* icons */
+header i {
+  cursor:pointer;
+}
+
+header li{
+  display: inline;
+}
+
+header p{
+  font-size:0.7rem;
+  font-weight:bold;
+  font-family: sans-serif;
+  opacity: 0.5;
+}
+
+h1{
+  margin:0;
+  padding:0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+h1 img{
+  width:60px;
+  position: relative;
+  left:20px;
+  top:8px;
+}
+
+/* Main Section */
+main{
+  width:100%;
+  text-align: center;
+}
+
+#mainGrid{
+  width:90%;
+  margin:0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+h3{
+  font-size:1.3rem;
+  font-family: sans-serif;
+}
+
+.levelContainer{
+  margin:0 auto;
+  width:200px;
+  background-color:var(--dcYellow);
+  border:5px solid var(--dcRed);
+  border-radius: 10px;
+}
+
+/* Heroes */
+
+#heroesContainer{
+  width:100%;
+}
+
+.container{
+  width:100%;
+  text-align: center;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container img{
+  height:400px;
+}
+
+#spidey{
+  height:300px;
+  position: relative;
+  top:100px;
+}
+
+#marvelHeroes{
+  display:none;
+}

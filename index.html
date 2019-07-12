@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Math Is Fun</title>
+  <!-- Font Awesome cdn -->
+  <script src="https://kit.fontawesome.com/60179d3629.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header>
+    <div class="left">
+      <img class="logo " id="marvelLogo" src="images/MarvelLogo.svg" alt="">
+      <img class="logo hide" id="dcLogo" src="images/dcLogo.png" alt="">
+    </div>
+    <h1><img src="images/heros/DC/supermanLogo.png"> uperHero Math Game</h1>
+    <ul>
+       <li>
+         <!-- Music for the page -->
+         <i id="soundOn" class="fas fa-volume-up fa-2x">
+           <audio id="batmanAud" src="audio/DC/LEGO Batman Music - Title Screen.mp3"></audio>
+           <audio id="spideyAud" src="audio/marvel/Spider-Man 2 (2004) Main Title by Danny Elfman (HD 1080p).mp3"></audio>
+          </i>
+        </li>
+       <li><i id="soundOff" class="fas fa-volume-off fa-2x"></i></li>
+       <li><i class="far fa-sun fa-2x"></i></li>
+       <li><i class="fas fa-moon fa-2x"></i></li>
+    </ul>
+    <p id="logoSwitchText">Click here for Marvel Heroes</p>
+  </header>
+  <div class="clear"></div>
+  <!-- Main Section -->
+  <main>
+    <p>Click on level below to play</p>
+    <div id="mainGrid">
+      <a href="">
+        <div class="levelContainer" id="levelOne">
+          <h3>Level 1</h3>
+          <p>Addition</p>
+          <div>
+            <p>Example: 5 + 9 = 14</p>
+          </div>
+        </div>  
+      </a> 
+      <a href="">
+        <div class="levelContainer" id="levelTwo">
+          <h3>Level 2</h3>
+          <p>Subtraction</p>
+          <div>
+            <p>Example: 9 - 7 = 2</p>
+          </div>
+        </div>  
+      </a>
+      <a href="">
+        <div class="levelContainer" id="levelThree">
+          <h3>Level 3</h3>
+          <p>Division</p>
+          <div>
+            <p>Example: 6 / 2 = 3</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    </div>
+    <div>
+      <h2>Start</h2>
+    </div>
+    <div>
+      <h2>Rules</h2>
+    </div>
+  </main>
+  <!-- heroes -->
+  <section id="heroes">
+    <div id="heroesContainer">
+      <div class="container" id="dcHeroes">
+        <div>
+          <img src="images/heros/DC/batman.png" alt="">
+        </div>
+        <div>
+          <img src="images/heros/DC/wonder-woman.png" alt="" >
+        </div>
+        <div>
+          <img src="images/heros/DC/superman.png" alt="">
+        </div>
+      </div>
+    <div class="container" id="marvelHeroes">
+      <div>
+        <img src="images/heros/Marvel/bp.png" alt="">
+      </div>
+      <div>
+        <img id="spidey" src="images/heros/Marvel/spiderman.png" alt="" height="200">
+      </div>
+      <div>
+        <img src="images/heros/Marvel/ironman.png" alt="">
+      </div>
+    </div>
+  </div>
+  </section>
+  
+  <footer>
+  </footer>
+  <script src="script/script.js"></script>
+</body>
+</html>
