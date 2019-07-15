@@ -1,5 +1,5 @@
 /* 
-
+@import url("css/index.css");
 body{
   background-color:black;
 } */
@@ -80,6 +80,16 @@ header i {
 
 header li{
   display: inline;
+}
+
+.fa-sun{
+  color:var(--dcYellow);
+  display:inline-block;
+}
+
+.fa-moon{
+  color:#020E4B;
+  display:none;
 }
 
 header p{

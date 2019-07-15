@@ -15,7 +15,7 @@
       <img class="logo " id="marvelLogo" src="images/MarvelLogo.svg" alt="">
       <img class="logo hide" id="dcLogo" src="images/dcLogo.png" alt="">
     </div>
-    <h1><img src="images/heros/DC/supermanLogo.png"> uperHero Math Game</h1>
+    <h1><img src="images/heros/DC/supermanLogo.png"> <span>uperHero Math Game</span></h1>
     <ul>
        <li>
          <!-- Music for the page -->
@@ -32,12 +32,12 @@
     <p id="logoSwitchText">Click here for Marvel Heroes</p>
   </header>
   <div class="clear"></div>
-  
+
   <!-- Main Section -->
   <main>
-    <p>Click on start to play</p>
+    <p><span>Choose a level and hit Start to play</span></p>
     <div id="mainGrid">
-      <a href="">
+      <a href="#">
         <div class="levelContainer" id="levelOne">
           <h3>Level 1</h3>
           <p>Addition</p>
@@ -46,7 +46,7 @@
           </div>
         </div>  
       </a> 
-      <a href="">
+      <a href="#">
         <div class="levelContainer" id="levelTwo">
           <h3>Level 2</h3>
           <p>Subtraction</p>
@@ -55,7 +55,7 @@
           </div>
         </div>  
       </a>
-      <a href="">
+      <a href="#">
         <div class="levelContainer" id="levelThree">
           <h3>Level 3</h3>
           <p>Division</p>
@@ -67,28 +67,53 @@
     </div>
     </div>
   </main>
+
+  <!-- Start / rules buttons -->
   <section id="startRules">
     <div id="start">
-      <a href="">
+      <a href="#">
         <h2>Start</h2>
       </a>
     </div>
     <div id="rules">
-      <a href="">
+      <a href="#">
         <h2>Rules</h2>
       </a>
     </div>
   </section>
+
+    <!-- User Information -->
   <section id="userInfo">
     <div id="name">
+      <span class="close">&times;</span>
       <form action="#" method="POST">
-          <label for="">Name</label>
-          <input type="text">
-          <label>Age</label>
-          <input type="number">
+          <div class="field">
+            <label for="">Name</label>
+            <input type="text">
+          </div>
+          <div class="field">
+            <label>Age</label>
+            <input type="number">
+          </div>
+          <div class="field">
+            <label for="level">Level</label>
+            <input id="level" type="radio">
+            <input id="level"type="radio">
+            <input id="level" type="radio">
+          </div>
+          <a id="play" href="#">Play</a>
       </form>
     </div>
   </section>
+
+  <!-- Game Rules -->
+  <section id="gameRules">
+      <div id="rulesContainer">
+        <span class="close">&times;</span>
+        <h4>Rules of the Game</h4>
+      </div>
+    </section>
+
 
   <!-- heroes -->
   <section id="heroes">
