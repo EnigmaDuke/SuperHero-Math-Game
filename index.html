@@ -7,7 +7,7 @@
   <title>Math Is Fun</title>
   <!-- Font Awesome cdn -->
   <script src="https://kit.fontawesome.com/60179d3629.js"></script>
-  <link rel="stylesheet" href="css/index.css">
+  <link id="pageStyle" rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <header>
@@ -21,19 +21,21 @@
          <!-- Music for the page -->
          <i id="soundOn" class="fas fa-volume-up fa-2x">
            <audio id="batmanAud" src="audio/DC/LEGO Batman Music - Title Screen.mp3"></audio>
+           <audio id="villainAud" src="audio/DC/villain/OFFICIAL - The Red Capes Are Coming - Batman v Superman Soundtrack - Hans Zimmer & Junkie XL.mp3"></audio>
            <audio id="spideyAud" src="audio/marvel/Spider-Man 2 (2004) Main Title by Danny Elfman (HD 1080p).mp3"></audio>
           </i>
         </li>
        <li><i id="soundOff" class="fas fa-volume-off fa-2x"></i></li>
-       <li><i class="far fa-sun fa-2x"></i></li>
-       <li><i class="fas fa-moon fa-2x"></i></li>
+       <li><i id="light" class="far fa-sun fa-2x"></i></li>
+       <li><i id="dark" class="fas fa-moon fa-2x"></i></li>
     </ul>
     <p id="logoSwitchText">Click here for Marvel Heroes</p>
   </header>
   <div class="clear"></div>
+  
   <!-- Main Section -->
   <main>
-    <p>Click on level below to play</p>
+    <p>Click on start to play</p>
     <div id="mainGrid">
       <a href="">
         <div class="levelContainer" id="levelOne">
@@ -64,13 +66,30 @@
       </a>
     </div>
     </div>
-    <div>
-      <h2>Start</h2>
-    </div>
-    <div>
-      <h2>Rules</h2>
-    </div>
   </main>
+  <section id="startRules">
+    <div id="start">
+      <a href="">
+        <h2>Start</h2>
+      </a>
+    </div>
+    <div id="rules">
+      <a href="">
+        <h2>Rules</h2>
+      </a>
+    </div>
+  </section>
+  <section id="userInfo">
+    <div id="name">
+      <form action="#" method="POST">
+          <label for="">Name</label>
+          <input type="text">
+          <label>Age</label>
+          <input type="number">
+      </form>
+    </div>
+  </section>
+
   <!-- heroes -->
   <section id="heroes">
     <div id="heroesContainer">
@@ -95,6 +114,30 @@
       <div>
         <img src="images/heros/Marvel/ironman.png" alt="">
       </div>
+    </div>
+    <!-- DC Villains -->
+    <div class="container" id="dcVillains">
+        <div>
+          <img src="images/villains/DC/riddler.png" alt="">
+        </div>
+        <div id="seid">
+          <img id="darkseid" src="images/villains/DC/Darkseid2.png" alt="">
+        </div>
+        <div>
+          <img src="images/villains/DC/joker.png" alt="">
+        </div>
+    </div>
+    <!-- Marvel Villains -->
+    <div class="container" id="marvelVillains">
+        <div>
+          <img src="images/villains/Marvel/greenGoblin.png" alt="">
+        </div>
+        <div>
+          <img src="images/villains/Marvel/thanos.png" alt="">
+        </div>
+        <div>
+          <img src="images/villains/Marvel/carnage.png" alt="">
+        </div>
     </div>
   </div>
   </section>
