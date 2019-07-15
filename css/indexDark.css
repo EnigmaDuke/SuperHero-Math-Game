@@ -1,3 +1,9 @@
+/* 
+
+body{
+  background-color:black;
+} */
+
 :root{
   --dcRed:#CC4125;
   --dcBlue:#0076F2;
@@ -14,7 +20,11 @@
 }
 
 body{
-  background-color:var(--dcBlue);
+  background-color:black;
+  background-image:url("../images/background_images/gotham.jpg");
+  background-attachment: fixed;
+  background-position:center;
+  background-size:cover;
 }
 
 a{
@@ -158,11 +168,14 @@ h2:hover{
   top:0;
   left:0;
   transition: all 0.5s;
+  cursor: pointer;
+  z-index:1;
 }
 
 #start:hover, #rules:hover{
   background-color:var(--dcYellow);
   box-shadow:0 0 2px var(--dcYellow);
+
 }
 
 #start{
@@ -197,6 +210,48 @@ h2:hover{
   top:100px;
 }
 
+#darkseid{
+  transform-origin:200% center; 
+  position:relative; 
+  animation:rotate 5s linear infinite; 
+  opacity: 0.1;
+  transition:all 6s;
+}
+
+#seid{
+  transition:3s;
+  border-radius:75%;
+}
+
+#seid:hover{
+  background-color: rgba(245,241,222,0.3);
+}
+
+#darkseid:hover{
+  opacity:1;
+  cursor: pointer;
+} 
+
+div:before 
+{ content:''; 
+  position:absolute; 
+  /* height:100%; 
+  width:100%;  */
+
+  animation:rotate 2s linear reverse infinite; 
+}
+@keyframes rotate 
+{ 
+  50% { 
+
+        transform: scaleY(1.01);
+        transform: scaleX(1.01);
+  } 
+  100%{
+
+  } 
+} 
+
 #marvelHeroes{
   display:none;
 }
@@ -207,4 +262,8 @@ h2:hover{
 
 #dcVillains{
   display: none;
+}
+
+#dcHeroes{
+  display:none;
 }
