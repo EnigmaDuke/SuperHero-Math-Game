@@ -1,5 +1,106 @@
 /* @import url("index.css"); */
 
+/* header /* Header */
+.logo{
+  position: relative;
+  top:0;
+  left:0;
+  cursor: pointer;
+}
+
+header{
+  padding:20px;
+  height:10vh;
+}
+
+header img{
+  width:100px;
+  margin:0 auto;
+}
+
+.left{
+  float:left;
+}
+
+header ul{
+  list-style-type: none;
+  float:right;
+  position: relative;
+  top:-35px;
+}
+
+#logoSwitchText{
+  color:var(--dcYellow);
+}
+
+h1 span{
+  text-shadow:1px 2px 1px red;
+  color:var(--dcYellow);
+}
+
+/* icons */
+header i {
+  cursor:pointer;
+}
+
+.fa-sun{
+  color:var(--dcYellow);
+  display:none;
+}
+
+.fa-moon{
+  color:#020E4B;
+}
+
+header li{
+  display: inline;
+}
+
+header p{
+  font-size:0.7rem;
+  font-weight:bold;
+  font-family: sans-serif;
+  opacity: 0.5;
+}
+
+h1{
+  margin:0;
+  padding:0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+h1 img{
+  width:60px;
+  position: relative;
+  left:20px;
+  top:8px;
+}
+
+#soundOn, #soundOff{
+  position: relative;
+  top:0;
+  left:0;
+}
+
+#soundOn{
+  z-index:1;
+}
+
+#soundOff{
+  z-index:0;
+  left:-20px;
+  display: none;
+}
+
+
+
+
+/* NEW CODE */
+
 :root{
   --dcRed:#CC4125;
   --dcBlue:#0076F2;
@@ -16,7 +117,8 @@
 }
 
 body{
-  height:100vh;
+  width:100%;
+  background-color:var(--dcBlue);
 }
 
 #cursor{
@@ -31,8 +133,8 @@ body{
 }
 
 main{
-  width:100%;
-  height:80vh;
+  /* width:100%;
+  height:75vh; */
   background-color:var(--dcBlue);
 }
 
@@ -106,9 +208,10 @@ justify-content: center;
 /* --- --- --- Footer --- --- --- */
 footer{
   width:100%;
-  height:auto;
   height:20vh;
   background-color:var(--dcYellow);
+  position: relative;
+  top:63.5vh;
 }
 
 footer ul{
@@ -127,6 +230,10 @@ footer ul p{
 
 footer p, li{
   display:inline-block;
+}
+
+.timerShadow{
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
 }
 
 #gameInfo{
