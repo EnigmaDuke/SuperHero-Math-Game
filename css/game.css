@@ -1,30 +1,127 @@
 /* @import url("index.css"); */
+
+:root{
+  --dcRed:#CC4125;
+  --dcBlue:#0076F2;
+  --dcYellow:#F3D405;
+
+  --marvelRed:#ED1C25;
+  --marvelYellow:#FCCA05;
+  --marvelBlue:#67C7EB;
+}
+
 *{
   margin:0;
   padding:0;
 }
 
 body{
-  background-color:steelblue;
+  height:100vh;
 }
+
 main{
   width:100%;
-  height:100vh;
-  margin:0 auto;
-  position: relative;
+  height:80vh;
+  background-color:var(--dcBlue);
 }
 
-.itemMove{
+img{
+  /* height:75px; */
+  /* width:100px; */
   position: absolute;
-  width:100px;
-}
-
-/* .itemMove{
-  display:none;
-} */
-/* 
-#test{
-  position: relative;
   top:0;
   left:0;
+  /* background-color:rgba(255,255,255,0.4);
+  border-radius: 50%; */
+}
+
+/* imgContainer */
+
+.imgContainer{
+  width:max-content;
+  display: inline-block;
+  position: absolute;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#batLogo{
+  width:155px;
+  height:116px;
+}
+
+#lanternLogo{
+  background-color:rgba(250,250,210,0.5);
+  border-radius:50%;
+  width:100px;
+  height:100px;
+}
+
+#flashLogo{
+  width:110px;
+  height:134px;
+}
+
+#wwLogo{
+  width:155px;
+  height:75px;
+}
+
+#aquaLogo{
+  width:80px;
+  height:94px;
+}
+
+/* .center{
+display: flex;
+align-items: center;
+justify-content: center;
 } */
+
+.generatedNum{
+  display:inline-block;
+  z-index: 100;
+  position: absolute;
+  font-size:3rem;
+  color:#fff;
+  text-shadow: 1px 2px 1px black, -1px -2px 1px black;
+  /* text-shadow:2px 1px 1px var(--dcYellow), 4px 1px 1px var(--dcRed), 6px 1px 1px var(--dcBlue); */
+}
+
+/* --- --- --- Footer --- --- --- */
+footer{
+  width:100%;
+  height:auto;
+  height:20vh;
+  background-color:var(--dcYellow);
+}
+
+footer ul{
+  width:50%;
+  margin:0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+footer ul p{
+  font-size:1.7rem;
+  padding-top:47.9px;
+
+}
+
+footer li{
+
+}
+
+footer p, li{
+  display:inline-block;
+}
+
+#gameInfo{
+  width:100%;
+}

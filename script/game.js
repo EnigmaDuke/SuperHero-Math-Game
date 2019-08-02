@@ -1,104 +1,78 @@
 
-
-let first = document.querySelector("#first");
-let main = document.querySelector("main");
-let rect = main.getBoundingClientRect();
-let bottomView = (window.scrollY + window.innerHeight) - 75;
-let rightView = (window.scrollX + window.innerWidth) - 100;
-console.log(window.innerWidth);
-//75 is the height of the batman logo
-
-console.log(rect);
-// alert(height);
-// test.addEventListener("click", randomNum);
-
-//generate random number
-
-// function randomNumX(){
-//   let rand = Math.floor(Math.random() * 200);
-//   return rand;
-// }
-
-// function randomNumY(){
-//   let rand = Math.floor(Math.random() * 1300);
-//   return rand;
-// }
-
-// let itemMove = document.querySelectorAll(".itemMove");
-
-// function randomPosition(){
-//   for (let i = 0; i < itemMove.length; i++){
-//     itemMove[i].style.top = randomNumX() + "px";
-//     itemMove[i].style.left = randomNumY() + "px";
-//   }
-// }
-
-function randomNumX(){
-  let rand = Math.floor(Math.random() * 1300);
-  return rand;
+let imgContainer = document.querySelectorAll(".imgContainer");
+let i;
+//Generate Random number
+function getRandomNum(num){
+  let randomNum = Math.floor(Math.random() * num);
+  return randomNum;
 }
+// console.log(window.innerHeight);
 
-function randomNumY(){
-  let rand = Math.floor(Math.random() * 500);
-  return rand;
-}
-
-function randomPosition(){
-  first.style.top = randomNumX() + "px";
-  first.style.left = randomNumY() + "px";
-}
-
-function posX() {
-  let rand = Math.floor(Math.random() * 300);
-  first.style.top = random
-  return rand;
-}
-
-// function move(){
-//   let pos = 0;
-//   let id = setInterval(frame, 10);
-//   function frame() {
-//     if (pos == height){
-//       clearInterval(id);
-//     } else {
-//       pos++;
-//       first.style.top = pos + 'px';
-//       first.style.left = pos + 'px';
-//     }
-//   }
-// }
-
-function move(){
-  // first.style.top = randomNumY() + 'px';
-  // first.style.left = randomNumX() + 'px';
-  let posX = randomNumX();
-  let posY = randomNumY();
-  let id = setInterval(frame, 5);
-  function frame() {
-    //If logo reaches bottom of the page
-    if (posY == bottomView) {
-      posY--;
-    } else {
-      posY++;
-      posX++;
-      first.style.top = posY + 'px';
-      first.style.left = posX + 'px';
-    }
-
-    //If logo reaches right border
-    if (posX == rightView){
-      clearInterval(id);
-    }
-    
+//randomize starting position of each image object
+window.onload = function(){
+  for (i = 0; i < imgContainer.length; i++){
+    imgContainer[i].style.top = getRandomNum(374) + "px";
+    imgContainer[i].style.left = getRandomNum(1150) + "px";
   }
 }
 
+//Display Random number on images
+let generatedNum = document.querySelectorAll(".generatedNum");
+
+//Calculate random numbers
+function addNumbers(){
+  let num1 = getRandomNum(25);
+  let num2 = getRandomNum(9);
+  let result =  num1 + num2;
+  console.log(result);
+  return result;
+}
+let result = addNumbers();
+
+function displayResults(){
+//loop through array of images
+
+  for(i = 0; i < generatedNum.length; i++){
+    //assign random number
+    let number = getRandomNum(25);
+  //choose a random element from array
+    generatedNum[i].innerHTML = number;
+    // generatedNum[i].setAttribute("value", number);
+    console.log(number);
+    // generatedNum[i].innerHTML = getRandomNum(25); 
+  }
+
+  //assign the result to an image
+  let arrayPosition = getRandomNum(generatedNum.length-1);
+  generatedNum[arrayPosition].innerHTML = result;
+  console.log(result);
+  console.log(typeof parseInt(generatedNum[0].innerText));
+  return result;
+}
+displayResults();
 
 
-window.onload = function(){
-  // randomPosition();
-  move()
-};
 
-//assign random number to x position
-//assign random number to y position
+function findResult(){
+  //if result is = to innerhTML
+  for(i = 0; i < imgContainer.length; i++){
+    if(result == this.innerText){
+      return alert ("hi");
+    } else if (result != parseInt(generatedNum[i].innerText)){
+      this.style.display = "none";
+    }
+  }
+  
+  //ALERT hello
+  
+}
+
+for(i = 0; i < imgContainer.length; i++){
+  imgContainer[i].addEventListener("click", findResult);
+}
+
+
+//return result 
+//display random num  result on 1 image
+//display random numbers on another image
+

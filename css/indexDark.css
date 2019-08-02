@@ -1,8 +1,10 @@
+
 /* 
 @import url("css/index.css");
 body{
   background-color:black;
 } */
+
 
 :root{
   --dcRed:#CC4125;
@@ -229,12 +231,14 @@ h2:hover{
 }
 
 #seid{
+  opacity:0.1;
   transition:3s;
   border-radius:75%;
 }
 
 #seid:hover{
   background-color: rgba(245,241,222,0.3);
+  opacity:1;
 }
 
 #darkseid:hover{
@@ -276,4 +280,4 @@ div:before
 
 #dcHeroes{
   display:none;
-}
+} 

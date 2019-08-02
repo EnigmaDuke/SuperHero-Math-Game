@@ -78,7 +78,7 @@ dcLogo.addEventListener("click", ()=>{
   // vid.play();
 });
 
-// play music on load
+//play music on load
 // window.onload = function (){
 //   vid.play();
 // }
