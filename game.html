@@ -5,10 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Math Is Fun | Play</title>
+    <!-- Font Awesome cdn -->
+    <script src="https://kit.fontawesome.com/60179d3629.js"></script>
   <link rel="stylesheet" href="css/game.css">
   
 </head>
 <body>
+    <header>
+        <h1><img src="images/heros/DC/supermanLogo.png">    <span>uperHero Math Game</span>
+        </h1>
+        <ul>
+           <li>
+             <!-- Music for the page -->
+             <i id="soundOn" class="fas fa-volume-up fa-2x">
+               <audio id="batmanAud" src="audio/DC/LEGO Batman Music - Title Screen.mp3"></audio>
+               <audio id="villainAud" src="audio/DC/villain/OFFICIAL - The Red Capes Are Coming - Batman v Superman Soundtrack - Hans Zimmer & Junkie XL.mp3"></audio>
+               <audio id="spideyAud" src="audio/marvel/Spider-Man 2 (2004) Main Title by Danny Elfman (HD 1080p).mp3"></audio>
+              </i>
+            </li>
+           <li><i id="soundOff" class="fas fa-volume-off fa-2x"></i></li>
+           <li><i id="light" class="far fa-sun fa-2x"></i></li>
+           <li><i id="dark" class="fas fa-moon fa-2x"></i></li>
+        </ul>
+      </header>
   <main>
     <div id="cursor"></div>
     <!-- Batman Logo -->
@@ -69,7 +88,7 @@
     </div>
     <!-- Supes Logo -->
     <div class="imgContainer">
-      <img class="itemMove" src="images/heros/DC/wonderwomanLogoCust.png" alt="">
+      <img style="width:120px" class="itemMove" src="images/heros/DC/supermanLogo.png" alt="">
       <div id="wwLogo" class="center">
           <p class="generatedNum"></p>
       </div>
