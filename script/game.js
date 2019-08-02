@@ -7,36 +7,22 @@ let missTracker = 0;
 let score = document.querySelector("#score");
 let scoreTracker = 0;
 let cursor = document.querySelector("#cursor");
+let timerSpan = document.querySelector("#timer");
+let generatedNum = document.querySelectorAll(".generatedNum");
 let i;
 
 /* --- --- Code For Level 1 --- --- */
-
-//Generate Random number
-function getRandomNum(num){
-  let randomNum = Math.floor(Math.random() * num + 1);
-  return randomNum;
-}
-// console.log(window.innerHeight);
-
-//randomize starting position of each image object
-window.onload = function(){
+function levelOne(){
+  timer(90);
   randomPosition();
   displayResults();
-  timer(5);
   cursor.style.display = "block";
 }
 
-//Generate Random Position
-function randomPosition(){
-
-  for (i = 0; i < imgContainer.length; i++){
-    imgContainer[i].style.top = getRandomNum(374) + "px";
-    imgContainer[i].style.left = getRandomNum(1150) + "px";
-    imgContainer[i].style.display = "block";
-  }
+//randomize starting position of each image object
+window.onload = function(){
+  levelOne();
 }
-
-let timerSpan = document.querySelector("#timer");
 
 //90 second timer
 function timer(seconds){
@@ -54,8 +40,34 @@ function timer(seconds){
   }, 1000);
 }
 
+//Generate Random Position
+function randomPosition(){
+  for (i = 0; i < imgContainer.length; i++){
+    imgContainer[i].style.top = getRandomNum(374) + "px";
+    imgContainer[i].style.left = getRandomNum(1150) + "px";
+    imgContainer[i].style.display = "block";
+  }
+}
+
 //Display Random number on images
-let generatedNum = document.querySelectorAll(".generatedNum");
+function displayResults(){
+  //loop through array of images
+    for(i = 0; i < generatedNum.length; i++){
+      //assign random number
+      let number = getRandomNum(25);
+    //choose a random element from array
+      generatedNum[i].innerHTML = number;
+      // generatedNum[i].setAttribute("value", number);
+      // console.log(number);
+      // generatedNum[i].innerHTML = getRandomNum(25); 
+    }
+    //assign the result to an image
+    let arrayPosition = getRandomNum(generatedNum.length-1);
+    generatedNum[arrayPosition].innerHTML = result;
+    console.log(result);
+    console.log(typeof parseInt(generatedNum[0].innerText));
+    return result;
+}
 
 //Calculate random numbers
 function addNumbers(){
@@ -68,25 +80,12 @@ function addNumbers(){
 }
 let result = addNumbers();
 console.log(result);
-function displayResults(){
-//loop through array of images
 
-  for(i = 0; i < generatedNum.length; i++){
-    //assign random number
-    let number = getRandomNum(25);
-  //choose a random element from array
-    generatedNum[i].innerHTML = number;
-    // generatedNum[i].setAttribute("value", number);
-    // console.log(number);
-    // generatedNum[i].innerHTML = getRandomNum(25); 
-  }
-  //assign the result to an image
-  let arrayPosition = getRandomNum(generatedNum.length-1);
-  generatedNum[arrayPosition].innerHTML = result;
-  console.log(result);
-  console.log(typeof parseInt(generatedNum[0].innerText));
-  return result;
-}
+//Generate Random number
+function getRandomNum(num){
+  let randomNum = Math.floor(Math.random() * num + 1);
+  return randomNum;
+}  
 
 //Keeping score
 function findResult(){
