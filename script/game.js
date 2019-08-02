@@ -10,13 +10,19 @@ let cursor = document.querySelector("#cursor");
 let timerSpan = document.querySelector("#timer");
 let generatedNum = document.querySelectorAll(".generatedNum");
 let i;
+let result;
 
 /* --- --- Code For Level 1 --- --- */
 function levelOne(){
   timer(90);
   randomPosition();
+  result = addNumbers();
   displayResults();
   cursor.style.display = "block";
+
+  for(i = 0; i < imgContainer.length; i++){
+    imgContainer[i].addEventListener("click", findResult);
+  }
 }
 
 //randomize starting position of each image object
@@ -57,9 +63,6 @@ function displayResults(){
       let number = getRandomNum(25);
     //choose a random element from array
       generatedNum[i].innerHTML = number;
-      // generatedNum[i].setAttribute("value", number);
-      // console.log(number);
-      // generatedNum[i].innerHTML = getRandomNum(25); 
     }
     //assign the result to an image
     let arrayPosition = getRandomNum(generatedNum.length-1);
@@ -78,8 +81,9 @@ function addNumbers(){
   console.log(result);
   return result;
 }
-let result = addNumbers();
-console.log(result);
+// let result;
+// let result = addNumbers();
+// console.log(result);
 
 //Generate Random number
 function getRandomNum(num){
@@ -88,30 +92,31 @@ function getRandomNum(num){
 }  
 
 //Keeping score
-function findResult(){
-  if(result == this.innerText){
+function findResult()
+{
+  if(result == this.innerText)
+  {
     scoreTracker += 3;
     score.innerHTML = scoreTracker;
     hitTracker++;
     console.log(hitTracker);
     hits.innerHTML = hitTracker;
     reload();
-  } else {
+  } 
+  else 
+  {
     scoreTracker--;
     score.innerHTML = scoreTracker;
     missTracker++;
     this.style.display = "none";
     miss.innerHTML = missTracker;
 
-    if(missTracker == 9){
+    if(missTracker == 9)
+    {
       //when game over display a modal to ask to retry or go to the main menu
       gameOver();
-        }
-      }
-}
-
-for(i = 0; i < imgContainer.length; i++){
-  imgContainer[i].addEventListener("click", findResult);
+    }
+  }
 }
 
 function gameOver(){
@@ -119,19 +124,11 @@ function gameOver(){
   reload();
 }
 
-document.addEventListener('mousemove', function(e){
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
-})
-
 function reload(){
   randomPosition();
   result = addNumbers();
   displayResults();
 }
-
 
 function nextLevel(){
   setTimeout(()=>{
@@ -139,13 +136,20 @@ function nextLevel(){
   }, 3000);
 }
 
+/* --- --- Code for Level 2 --- --- */
+
 function level2(){
   randomPosition();
   timer(120);
   result = subtractNumbers();
   displayResults();
+
+  for(i = 0; i < imgContainer.length; i++){
+    imgContainer[i].addEventListener("click", findSubResult);
+  }
+
   cursor.style.display = "block";
-  findResult();
+  // findResult();
 }
 
 //Calculate random numbers
@@ -161,6 +165,48 @@ function subtractNumbers(){
   console.log(result);
   return result;
 }
+
+//Keeping score
+function findSubResult()
+{
+  if(result == this.innerText)
+  {
+    scoreTracker += 3;
+    score.innerHTML = scoreTracker;
+    hitTracker++;
+    console.log(hitTracker);
+    hits.innerHTML = hitTracker;
+    subReload();
+  } 
+  else 
+  {
+    scoreTracker--;
+    score.innerHTML = scoreTracker;
+    missTracker++;
+    this.style.display = "none";
+    miss.innerHTML = missTracker;
+
+    if(missTracker == 9)
+    {
+      //when game over display a modal to ask to retry or go to the main menu
+      gameOver();
+    }
+  }
+}
+
+//reload game
+function subReload(){
+  randomPosition();
+  result = subtractNumbers();
+  displayResults();
+}
+
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
+});
 
 
 //return result 
