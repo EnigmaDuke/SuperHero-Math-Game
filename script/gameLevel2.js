@@ -9,8 +9,6 @@ let scoreTracker = 0;
 let cursor = document.querySelector("#cursor");
 let i;
 
-/* --- --- Code For Level 1 --- --- */
-
 //Generate Random number
 function getRandomNum(num){
   let randomNum = Math.floor(Math.random() * num + 1);
@@ -22,7 +20,7 @@ function getRandomNum(num){
 window.onload = function(){
   randomPosition();
   displayResults();
-  timer(5);
+  timer();
   cursor.style.display = "block";
 }
 
@@ -38,17 +36,16 @@ function randomPosition(){
 
 let timerSpan = document.querySelector("#timer");
 
-//90 second timer
-function timer(seconds){
-  let timeLeft = seconds;
+//120 second timer
+function timer(){
+  let timeLeft = 120;
   let countdown = setInterval(()=>{
     timerSpan.classList.add("timerShadow");
     timerSpan.innerHTML = timeLeft;
     timeLeft -= 1;
-    if (timeLeft == -2){
+    if (timeLeft <= -2){
       clearInterval(countdown);
       timer.innerHTML = gameOver();
-      nextLevel();
     }
     timerSpan.classList.remove("timerShadow");
   }, 1000);
@@ -58,15 +55,19 @@ function timer(seconds){
 let generatedNum = document.querySelectorAll(".generatedNum");
 
 //Calculate random numbers
-function addNumbers(){
+function subtractNumbers(){
   let num1 = getRandomNum(25);
   let num2 = getRandomNum(9);
-  let result =  num1 + num2;
-  cursor.innerHTML = num1 + " + " + num2;
+  while (num1 <= num2){
+    num1 = getRandomNum(25);
+    num2 = getRandomNum(9);
+  }
+  let result =  num1 - num2;
+  cursor.innerHTML = num1 + " - " + num2;
   console.log(result);
   return result;
 }
-let result = addNumbers();
+let result = subtractNumbers();
 console.log(result);
 function displayResults(){
 //loop through array of images
@@ -117,6 +118,7 @@ for(i = 0; i < imgContainer.length; i++){
 
 function gameOver(){
   timerSpan.innerHTML = "Game Over";
+  alert("Game Over");
   reload();
 }
 
@@ -129,40 +131,9 @@ document.addEventListener('mousemove', function(e){
 
 function reload(){
   randomPosition();
-  result = addNumbers();
-  displayResults();
-}
-
-
-function nextLevel(){
-  setTimeout(()=>{
-    level2();
-  }, 3000);
-}
-
-function level2(){
-  randomPosition();
-  timer(120);
   result = subtractNumbers();
   displayResults();
-  cursor.style.display = "block";
-  findResult();
 }
-
-//Calculate random numbers
-function subtractNumbers(){
-  let num1 = getRandomNum(25);
-  let num2 = getRandomNum(9);
-  while (num1 <= num2){
-    num1 = getRandomNum(25);
-    num2 = getRandomNum(9);
-  }
-  let result =  num1 - num2;
-  cursor.innerHTML = num1 + " - " + num2;
-  console.log(result);
-  return result;
-}
-
 
 //return result 
 //display random num  result on 1 image
