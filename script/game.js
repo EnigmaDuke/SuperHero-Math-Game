@@ -11,7 +11,7 @@ let i;
 
 //Generate Random number
 function getRandomNum(num){
-  let randomNum = Math.floor(Math.random() * num);
+  let randomNum = Math.floor(Math.random() * num + 1);
   return randomNum;
 }
 // console.log(window.innerHeight);
@@ -20,7 +20,7 @@ function getRandomNum(num){
 window.onload = function(){
   randomPosition();
   displayResults();
-  // timer();
+  timer();
   cursor.style.display = "block";
 }
 
@@ -37,17 +37,19 @@ function randomPosition(){
 let timerSpan = document.querySelector("#timer");
 
 //90 second timer
-// function timer(){
-//   let timeLeft = 90;
-//   let countdown = setInterval(()=>{
-//     timerSpan.innerHTML = timeLeft;
-//     timeLeft -= 1;
-//     if (timeLeft <= 0){
-//       clearInterval(countdown);
-//       timer.innerHTML = gameOver();
-//     }
-//   }, 1000);
-// }
+function timer(){
+  let timeLeft = 90;
+  let countdown = setInterval(()=>{
+    timerSpan.classList.add("timerShadow");
+    timerSpan.innerHTML = timeLeft;
+    timeLeft -= 1;
+    if (timeLeft <= 0){
+      clearInterval(countdown);
+      timer.innerHTML = gameOver();
+    }
+    timerSpan.classList.remove("timerShadow");
+  }, 5000);
+}
 
 //Display Random number on images
 let generatedNum = document.querySelectorAll(".generatedNum");
@@ -83,6 +85,7 @@ function displayResults(){
   return result;
 }
 
+//Keeping score
 function findResult(){
   if(result == this.innerText){
     scoreTracker += 3;
@@ -98,7 +101,7 @@ function findResult(){
     this.style.display = "none";
     miss.innerHTML = missTracker;
 
-    if(missTracker == 3){
+    if(missTracker == 9){
       //when game over display a modal to ask to retry or go to the main menu
       gameOver();
         }
@@ -132,3 +135,7 @@ function reload(){
 //display random num  result on 1 image
 //display random numbers on another image
 
+
+//IDEA Location chooser 
+/* have four background images that can be choosed from
+  when a player chooses one there the bg image because that image */
