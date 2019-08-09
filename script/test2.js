@@ -104,9 +104,6 @@ let level1 = function()
     imgContainer[i].addEventListener("click", findResult);
   }
 
-
-
-
   // for(i = 0; i < imgContainer.length; i++){
   //   imgContainer[i].removeEventListener("click", findResult);
   // }
@@ -118,6 +115,9 @@ let level1 = function()
       for(i = 0; i < generatedNum.length; i++){
         //assign random number
         let number = getRandomNum(25);
+        if (number == result){
+          number = getRandomNum(25);
+        }
       //choose a random element from array
         generatedNum[i].innerHTML = number;
       }
@@ -184,6 +184,9 @@ function displaySubResults(){
     {
       //assign random number
       let number = getRandomNum(25);
+      if (number == subResult){
+        number = getRandomNum(25);
+      }
       //choose a random element from array and assign number to it
       generatedNum[i].innerHTML = number;
     }
