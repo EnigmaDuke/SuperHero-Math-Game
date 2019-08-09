@@ -13,7 +13,8 @@ let i;
 let result;
 
 /* --- --- Code For Level 1 --- --- */
-function levelOne(){
+function levelOne()
+{
   timer(90);
   randomPosition();
   result = addNumbers();
@@ -23,14 +24,80 @@ function levelOne(){
   for(i = 0; i < imgContainer.length; i++){
     imgContainer[i].addEventListener("click", findResult);
   }
+
+  //Display Random number on images
+  function displayResults(){
+    //loop through array of images
+      for(i = 0; i < generatedNum.length; i++){
+        //assign random number
+        let number = getRandomNum(25);
+      //choose a random element from array
+        generatedNum[i].innerHTML = number;
+      }
+      //assign the result to an image
+      let arrayPosition = getRandomNum(generatedNum.length-1);
+      generatedNum[arrayPosition].innerHTML = result;
+      console.log(result);
+      console.log(typeof parseInt(generatedNum[0].innerText));
+      return result;
+  }
+
+    //Calculate random numbers
+  function addNumbers(){
+    let num1 = getRandomNum(25);
+    let num2 = getRandomNum(9);
+    let result =  num1 + num2;
+    cursor.innerHTML = num1 + " + " + num2;
+    console.log(result);
+    return result;
+  }
+
+  //Keeping score
+  function findResult()
+  {
+    if(result == this.innerText)
+    {
+      scoreTracker += 3;
+      score.innerHTML = scoreTracker;
+      hitTracker++;
+      console.log(hitTracker);
+      hits.innerHTML = hitTracker;
+      reload();
+      randomPosition();
+    } 
+    else 
+    {
+      scoreTracker--;
+      score.innerHTML = scoreTracker;
+      missTracker++;
+      this.style.display = "none";
+      miss.innerHTML = missTracker;
+
+      if(missTracker == 9)
+      {
+        //when game over display a modal to ask to retry or go to the main menu
+        gameOver();
+      }
+    }
+  }
+  function reload(){
+    randomPosition();
+    result = addNumbers();
+    displayResults();
+  }
 }
+
+
+// END OF LEVEL 1
+
+//GENERAL FUNCTIONS
 
 //randomize starting position of each image object
 window.onload = function(){
   levelOne();
 }
 
-//90 second timer
+// Game Timer
 function timer(seconds){
   let timeLeft = seconds;
   let countdown = setInterval(()=>{
@@ -55,151 +122,112 @@ function randomPosition(){
   }
 }
 
-//Display Random number on images
-function displayResults(){
-  //loop through array of images
-    for(i = 0; i < generatedNum.length; i++){
-      //assign random number
-      let number = getRandomNum(25);
-    //choose a random element from array
-      generatedNum[i].innerHTML = number;
-    }
-    //assign the result to an image
-    let arrayPosition = getRandomNum(generatedNum.length-1);
-    generatedNum[arrayPosition].innerHTML = result;
-    console.log(result);
-    console.log(typeof parseInt(generatedNum[0].innerText));
-    return result;
-}
-
-//Calculate random numbers
-function addNumbers(){
-  let num1 = getRandomNum(25);
-  let num2 = getRandomNum(9);
-  let result =  num1 + num2;
-  cursor.innerHTML = num1 + " + " + num2;
-  console.log(result);
-  return result;
-}
-// let result;
-// let result = addNumbers();
-// console.log(result);
-
 //Generate Random number
 function getRandomNum(num){
   let randomNum = Math.floor(Math.random() * num + 1);
   return randomNum;
 }  
 
-//Keeping score
-function findResult()
-{
-  if(result == this.innerText)
-  {
-    scoreTracker += 3;
-    score.innerHTML = scoreTracker;
-    hitTracker++;
-    console.log(hitTracker);
-    hits.innerHTML = hitTracker;
-    reload();
-  } 
-  else 
-  {
-    scoreTracker--;
-    score.innerHTML = scoreTracker;
-    missTracker++;
-    this.style.display = "none";
-    miss.innerHTML = missTracker;
-
-    if(missTracker == 9)
-    {
-      //when game over display a modal to ask to retry or go to the main menu
-      gameOver();
-    }
-  }
-}
-
 function gameOver(){
   timerSpan.innerHTML = "Game Over";
-  reload();
-}
 
-function reload(){
-  randomPosition();
-  result = addNumbers();
-  displayResults();
 }
 
 function nextLevel(){
   setTimeout(()=>{
-    level2();
+  randomPosition();
+  level2();
   }, 3000);
 }
 
 /* --- --- Code for Level 2 --- --- */
 
 function level2(){
-  randomPosition();
+ 
   timer(120);
+  randomPosition();
   result = subtractNumbers();
-  displayResults();
+  displaySubResults();
+  cursor.style.display = "block";
 
   for(i = 0; i < imgContainer.length; i++){
     imgContainer[i].addEventListener("click", findSubResult);
   }
 
-  cursor.style.display = "block";
-  // findResult();
-}
-
-//Calculate random numbers
-function subtractNumbers(){
-  let num1 = getRandomNum(25);
-  let num2 = getRandomNum(9);
-  while (num1 <= num2){
-    num1 = getRandomNum(25);
-    num2 = getRandomNum(9);
+  //Display Random number on images
+  function displaySubResults(){
+    //loop through array of images
+      for(i = 0; i < generatedNum.length; i++){
+        //assign random number
+        let number = getRandomNum(25);
+      //choose a random element from array
+        generatedNum[i].innerHTML = number;
+      }
+      //assign the result to an image
+      let arrayPosition = getRandomNum(generatedNum.length-1);
+      generatedNum[arrayPosition].innerHTML = result;
+      console.log(result);
+      console.log(typeof parseInt(generatedNum[0].innerText));
+      return result;
   }
-  let result =  num1 - num2;
-  cursor.innerHTML = num1 + " - " + num2;
-  console.log(result);
-  return result;
-}
+  
+  //Calculate random numbers
+  function subtractNumbers(){
+    let num1 = getRandomNum(25);
+    let num2 = getRandomNum(9);
+    while (num1 <= num2){
+      num1 = getRandomNum(25);
+      num2 = getRandomNum(9);
+    }
+    let result =  num1 - num2;
+    cursor.innerHTML = num1 + " - " + num2;
+    console.log(result);
+    return result;
+  }
 
-//Keeping score
-function findSubResult()
-{
-  if(result == this.innerText)
+  //Keeping score
+  function findSubResult()
   {
-    scoreTracker += 3;
-    score.innerHTML = scoreTracker;
-    hitTracker++;
-    console.log(hitTracker);
-    hits.innerHTML = hitTracker;
-    subReload();
-  } 
-  else 
-  {
-    scoreTracker--;
-    score.innerHTML = scoreTracker;
-    missTracker++;
-    this.style.display = "none";
-    miss.innerHTML = missTracker;
-
-    if(missTracker == 9)
+    if(result == this.innerText)
     {
-      //when game over display a modal to ask to retry or go to the main menu
-      gameOver();
+      scoreTracker += 3;
+      score.innerHTML = scoreTracker;
+      hitTracker++;
+      console.log(hitTracker);
+      hits.innerHTML = hitTracker;
+      subReload();
+    } 
+    else 
+    {
+      scoreTracker--;
+      score.innerHTML = scoreTracker;
+      missTracker++;
+      this.style.display = "none";
+      miss.innerHTML = missTracker;
+
+      if(missTracker == 9)
+      {
+        //when game over display a modal to ask to retry or go to the main menu
+        gameOver();
+      }
     }
   }
+
+  //reload game
+  function subReload(){
+    randomPosition();
+    result = subtractNumbers();
+    displaySubResults();
+  }
+
+
 }
 
-//reload game
-function subReload(){
-  randomPosition();
-  result = subtractNumbers();
-  displayResults();
-}
+
+
+
+
+
 
 document.addEventListener('mousemove', function(e){
   let x = e.clientX;

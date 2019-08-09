@@ -67,6 +67,7 @@ function subtractNumbers(){
   console.log(result);
   return result;
 }
+
 let result = subtractNumbers();
 console.log(result);
 function displayResults(){
