@@ -1,9 +1,10 @@
 let imgContainer = document.querySelectorAll(".imgContainer");
-let hits = document.querySelector("#hits");
-let hitTracker = 0;
-let miss = document.querySelector("#miss");
-let missTracker = 0;
 let score = document.querySelector("#score");
+let hits = document.querySelector("#hits");
+let miss = document.querySelector("#miss");
+let currentLvl = document.querySelector("#level");
+let hitTracker = 0;
+let missTracker = 0;
 let scoreTracker = 0;
 let cursor = document.querySelector("#cursor");
 let timerSpan = document.querySelector("#timer");
@@ -11,23 +12,23 @@ let generatedNum = document.querySelectorAll(".generatedNum");
 let i;
 let result;
 let subResult;
-let gameState1 = false;
-let gameState2 = false;
+let gameState;
 
-//cant have multiple of the same results displayed on the img container
-// let result;
-
-// div following cursor
-document.addEventListener('mousemove', function(e){
+// div following the cursor
+document.addEventListener('mousemove', function(e)
+{
   let x = e.clientX;
   let y = e.clientY;
   cursor.style.left = x + "px";
   cursor.style.top = y + "px";
 });
 
-function timer(seconds, level2){
+// Game countdown timer
+function timer(seconds, gamestate)
+{
   let timeLeft = seconds;
-  let countdown = setInterval(()=>{
+  let countdown = setInterval(()=>
+  {
     timerSpan.classList.add("timerShadow");
     timerSpan.innerHTML = timeLeft;
     timeLeft -= 1;
@@ -35,10 +36,16 @@ function timer(seconds, level2){
     if (timeLeft == -2){
       clearInterval(countdown);
       timer.innerHTML = gameOver();
-      return level2();
+      if (gamestate == 1)
+      {
+        return level2();
+      } else if(gamestate == 2)
+      {
+        return level3();
+      }
     }
-
-    if(missTracker >= 9){
+    if(missTracker >= 9)
+    {
       clearInterval(countdown);
       gameOver();
     }
@@ -46,9 +53,20 @@ function timer(seconds, level2){
   }, 1000);
 }
 
+// Disable images once the game is over
+// function disableImgs()
+// {
+//   for(var i = 0; i < imgContainer.length; i++)
+//   {
+//     imgContainer[i].classList.add("disable");
+//   }
+// }
+
 //Generate Random Position
-function randomPosition(){
-  for (i = 0; i < imgContainer.length; i++){
+function randomPosition()
+{
+  for (i = 0; i < imgContainer.length; i++)
+  {
     imgContainer[i].style.top = getRandomNum(374) + "px";
     imgContainer[i].style.left = getRandomNum(1150) + "px";
     imgContainer[i].style.display = "block";
@@ -56,7 +74,8 @@ function randomPosition(){
 }
 
 //Generate Random number
-function getRandomNum(num){
+function getRandomNum(num)
+{
   let randomNum = Math.floor(Math.random() * num + 1);
   return randomNum;
 }
@@ -89,12 +108,13 @@ function subtractNumbers(){
   return subResult;
 }
 
-// --- LEVEL 1 ---
+// --------- LEVEL 1 ---------
 
 let level1 = function()
 {
-  gameState1 = true;
-  timer(15, level2);
+  currentLvl.innerHTML = 1;
+  gameState = 1;
+  timer(1, gameState);
   randomPosition();
   result = addNumbers();
   displayResults();
@@ -103,10 +123,6 @@ let level1 = function()
   for(i = 0; i < imgContainer.length; i++){
     imgContainer[i].addEventListener("click", findResult);
   }
-
-  // for(i = 0; i < imgContainer.length; i++){
-  //   imgContainer[i].removeEventListener("click", findResult);
-  // }
 }
 
   //Display Random number on images
@@ -160,12 +176,13 @@ let level1 = function()
     displayResults();
   }
 
-// --- LEVEL 2 ---
+// --------- LEVEL 2 ---------
+
 let level2 = function()
 {
-  gameState1 = false;
-  gameState2 = true;
-  timer(120)
+  currentLvl.innerHTML = 2;
+  gameState = 2;
+  timer(1, gameState);
   randomPosition();
   subResult = subtractNumbers();
   displaySubResults();
@@ -231,30 +248,94 @@ function subReload(){
 
 // END OF LEVEL 2
 
-let game = (seconds)=>{
-  let timeLeft = seconds;
-  let countdown = setInterval(()=>{
-    timerSpan.classList.add("timerShadow");
-    timerSpan.innerHTML = timeLeft;
-    timeLeft -= 1;
-    //if time runs out
-    if (timeLeft == -2){
-      clearInterval(countdown);
-      timer.innerHTML = gameOver();
-      level2();
-    }
-    timerSpan.classList.remove("timerShadow");
-  }, 1000);
+// --------- LEVEL 3 ---------
+let level3 = function()
+{
+  currentLvl.innerHTML = 3;
+  gameState1 = true;
+  timer(5);
+  randomPosition();
+  divResult = divideNumbers();
+  displayDivResults();
+  cursor.style.display = "block";
+
+  for(i = 0; i < imgContainer.length; i++){
+    imgContainer[i].removeEventListener("click", findResult);
+    imgContainer[i].removeEventListener("click", findSubResult);
+    imgContainer[i].addEventListener("click", findDivResult);
+  }
 }
+
+function divideNumbers()
+{
+  let num1 = getRandomNum(25);
+  let num2 = getRandomNum(9);
+    while (num1 % num2 !== 0)
+    {
+      num1 = getRandomNum(25);
+      num2 = getRandomNum(9);
+    }
+    console.log(num1, num2);
+  let divResult =  num1 / num2;
+  cursor.innerHTML = num1 + " / " + num2;
+  return divResult;
+}
+
+//Display Random number on images
+function displayDivResults(){
+  //loop through array of images
+    for(i = 0; i < generatedNum.length; i++)
+    {
+      //assign random number
+      let number = getRandomNum(25);
+      if (number == divResult){
+        number = getRandomNum(25);
+      }
+      //choose a random element from array and assign number to it
+      generatedNum[i].innerHTML = number;
+    }
+    //assign the result to an image
+    let arrayPosition = getRandomNum(generatedNum.length-1);
+    generatedNum[arrayPosition].innerHTML = divResult;
+    return divResult;
+}
+
+//Keeping score
+function findDivResult()
+{
+  if(divResult === parseInt(this.innerText))
+  {
+    scoreTracker = scoreTracker + 1;
+    score.innerHTML = scoreTracker;
+    hitTracker++;
+    hits.innerHTML = hitTracker;
+    divReload();
+    randomPosition();
+  } 
+  else 
+  {
+    scoreTracker--;
+    score.innerHTML = scoreTracker;
+    missTracker++;
+    this.style.display = "none";
+    miss.innerHTML = missTracker;
+  }
+  if(missTracker == 9)
+    {
+      //when game over display a modal to ask to retry or go to the main menu
+      gameOver();
+    }
+}
+
+//reload game
+function divReload(){
+  randomPosition();
+  divResult = divideNumbers();
+  displayDivResults();
+}
+
+// END OF LEVEL 3
 
 window.onload = function(){
   level1();
-}
-
-function gameState(){
-  if (gameState1){
-    findResult();
-  } else if (gameState2){
-    findSubResult();
-  }
 }
