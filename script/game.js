@@ -32,6 +32,11 @@ playGame.addEventListener("click", ()=>{
   alert(age.value);
 });
 
+close.addEventListener("click", ()=>{
+  userInfo.style.display = "none";
+  // gameRules.style.display = "none";
+});
+
 
 // div following the cursor
 document.addEventListener('mousemove', function(e)
