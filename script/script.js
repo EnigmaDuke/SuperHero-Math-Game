@@ -3,7 +3,6 @@ let soundOff = document.querySelector("#soundOff");
 let soundOn = document.querySelector("#soundOn");
 // let timer = document.querySelector("#time");
 
-
 soundOn.addEventListener("click", ()=>{
   soundOn.style.display = "none";
   soundOff.style.display = "inline-block";
@@ -130,7 +129,6 @@ start.addEventListener("mouseover", ()=>{
     seid.style.backgroundColor = yellow;
 });
 
-let userInfo = document.querySelector("#userInfo");
 let gameRules = document.querySelector("#gameRules");
 
 let close = document.querySelector(".close");
