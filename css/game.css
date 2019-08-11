@@ -235,28 +235,6 @@ img{
   margin:0 auto;
 }
 
-#gameRules{
-  width:100%;
-  height:100vh;
-  background-color: #000;
-  background-color: rgba(0,0,0, 0.7);
-  position: fixed;
-  top:0;
-  display:none;
-}
-
-#rulesContainer{
-  width:50%;
-  height:50vh;
-  background-color:var(--dcRed);
-  border:2px solid var(--dcYellow);
-  border-radius:15px;
-  position: relative;
-  top:25%;
-  z-index:1;
-  margin:0 auto;
-}
-
 .close{
   font-size:2rem;
   float:right;
@@ -296,6 +274,33 @@ form{
 
 .field input:focus{
   outline:none;
+}
+
+/* End of Game Info */
+#endGame{
+  width:50%;
+  height:40vh;
+  /* position: absolute; */
+  background-color:red; 
+  margin:0 auto;
+  z-index: 500;
+  display: none;
+}
+
+h2, h3{
+  text-align: center;
+}
+
+#endGameContainer{
+  width:80%;
+  height:auto;
+  margin:0 auto;
+}
+
+#statsContainer p{
+  font-size:1.2rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 /* .center{

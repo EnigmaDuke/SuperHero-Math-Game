@@ -218,30 +218,8 @@ h2:hover{
   top:150px;
   left:-200px;
 }
-/* User Information */
 
-#userInfo{
-  width:100%;
-  height:100vh;
-  background-color: #000;
-  background-color: rgba(0,0,0, 0.7);
-  position: fixed;
-  top:0;
-  display:none;
-}
-
-#name{
-  width:50%;
-  height:50vh;
-  background-color:var(--dcRed);
-  border:2px solid var(--dcYellow);
-  border-radius:15px;
-  position: relative;
-  top:25%;
-  z-index:2;
-  margin:0 auto;
-}
-
+/* Game Rules */
 #gameRules{
   width:100%;
   height:100vh;
@@ -272,38 +250,6 @@ h2:hover{
   cursor:pointer;
 }
 
-.field label{
-  font-size:20px;
-  font-weight:bold;
-  text-align: center;
-}
-
-.field input{
-  padding:5px;
-}
-
-form{
-  width:100%;
-}
-
-#play{
-  width:10%;
-  display:block;
-  background-color:#fff;
-  padding:10px 20px;
-  border-radius:10px;
-  margin:0 auto;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-#play:hover{
-  color:var(--dcRed);
-}
-
-.field input:focus{
-  outline:none;
-}
 
 /* Heroes */
 #heroesContainer{

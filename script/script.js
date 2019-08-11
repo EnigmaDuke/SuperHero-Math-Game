@@ -129,29 +129,35 @@ start.addEventListener("mouseover", ()=>{
     seid.style.backgroundColor = yellow;
 });
 
+start.addEventListener("click", ()=>{
+  window.location.href = "game.html";
+});
+
 let gameRules = document.querySelector("#gameRules");
 
 let close = document.querySelector(".close");
-
-start.addEventListener("click", ()=>{
-  userInfo.style.display = "block";
-});
 
 rules.addEventListener("click", ()=>{
   gameRules.style.display = "block";
 });
 
 close.addEventListener("click", ()=>{
-  userInfo.style.display = "none";
-  // gameRules.style.display = "none";
+  gameRules.style.display = "none";
 });
 
 window.addEventListener("click", (event)=>{
-  if (event.target == userInfo || event.target == gameRules){
-    userInfo.style.display = "none";
+  if (event.target == gameRules){
     gameRules.style.display = "none";
   }
 });
+
+
+// window.addEventListener("click", (event)=>{
+//   if (event.target == userInfo || event.target == gameRules){
+//     userInfo.style.display = "none";
+//     gameRules.style.display = "none";
+//   }
+// });
 
 //Levels
 
