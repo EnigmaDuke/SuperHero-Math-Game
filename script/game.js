@@ -156,9 +156,6 @@ let finalHits = document.querySelector("#finalHits");
 let finalMiss = document.querySelector("#finalMiss");
 
 let endGame = ()=>{
-  alert(scoreTracker);
-  alert(hitTracker);
-  alert(missTracker);
   endGameSection.style.display = "block";
   playerName.innerHTML = name.value;
   playerAge.innerHTML = age.value;

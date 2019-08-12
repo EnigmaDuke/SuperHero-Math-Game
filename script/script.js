@@ -1,7 +1,15 @@
 
+// --- --- audio --- --- 
+
+//play music on load
+window.onload = function (){
+  vid.play();
+}
+
 let soundOff = document.querySelector("#soundOff");
 let soundOn = document.querySelector("#soundOn");
-// let timer = document.querySelector("#time");
+let vid = document.querySelector("#batmanAud");
+let wasClicked = false;
 
 soundOn.addEventListener("click", ()=>{
   soundOn.style.display = "none";
@@ -11,30 +19,24 @@ soundOn.addEventListener("click", ()=>{
 soundOff.addEventListener("click", function(){
   soundOn.style.display = "inline-block";
   soundOff.style.display = "none";
+  vid.pause();
+});
+
+soundOn.addEventListener("click", ()=>{
+  vid.play();
+  wasClicked = true;
+  return wasClicked;
 });
 
 // soundOff.classList.toggle("soundOffOn");
+
+// -- --  Character logos -- -- 
 
 let marvelLogo = document.querySelector("#marvelLogo");
 let dcLogo = document.querySelector("#dcLogo");
 let dcHeroes = document.querySelector("#dcHeroes");
 let marvelHeroes = document.querySelector("#marvelHeroes");
 let marvelVillains = document.querySelector("marvelVillains");
-
-// Audio
-let vid = document.querySelector("#batmanAud");
-let wasClicked = false;
-
-soundOff.addEventListener("click", ()=>{
-  vid.play();
-
-});
-
-soundOn.addEventListener("click", ()=>{
-  vid.pause();
-  wasClicked = true;
-  return wasClicked;
-});
 
 // Logos 
 
@@ -77,10 +79,7 @@ dcLogo.addEventListener("click", ()=>{
   // vid.play();
 });
 
-//play music on load
-// window.onload = function (){
-//   vid.play();
-// }
+
 
 //keypress "M " to mute
 
@@ -158,10 +157,4 @@ window.addEventListener("click", (event)=>{
 //     gameRules.style.display = "none";
 //   }
 // });
-
-//Levels
-
-let levelOne = document.querySelector("#levelOne");
-let levelTwo = document.querySelector("#levelTwo");
-let levelThree = document.querySelector("#levelThree");
 

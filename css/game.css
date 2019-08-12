@@ -13,6 +13,7 @@
   cursor: pointer;
 }
 
+
 header{
   padding:20px;
   height:10vh;
@@ -102,8 +103,6 @@ h1 img{
 }
 
 
-
-
 /* NEW CODE */
 
 :root{
@@ -144,9 +143,10 @@ body{
 /*  Main */
 
 main{
-  /* width:100%;
-  height:75vh; */
-  background-color:var(--dcBlue);
+  position: relative;
+  width:100%;
+  height:74vh;
+  background-color:var(--dcRed);
 }
 
 img{
@@ -160,11 +160,25 @@ img{
 }
 
   /* imgContainer */
-
 .imgContainer{
-  width:max-content;
+
+  width:50px;
+  height:50px;
   display: none;
   position: absolute;
+  animation-name:rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .imgContainer:hover{
@@ -322,10 +336,10 @@ justify-content: center;
 /* --- --- --- Footer --- --- --- */
 footer{
   width:100%;
-  height:20vh;
+  height:10vh;
   background-color:var(--dcYellow);
-  position: relative;
-  top:63.5vh;
+  /* position: relative; */
+  /* top:63.5vh; */
 }
 
 footer ul{
@@ -338,7 +352,7 @@ footer ul{
 
 footer ul p{
   font-size:1.7rem;
-  padding-top:47.9px;
+  /* padding-top:47.9px; */
 
 }
 
