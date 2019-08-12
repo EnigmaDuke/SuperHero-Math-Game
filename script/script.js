@@ -187,8 +187,6 @@ dayMode.addEventListener("click", ()=>{
   vid.play();
 });
 
-//when hovered darkseid says darkseid;
-
 let start = document.querySelector("#start");
 let rules = document.querySelector("#rules");
 let darseid = document.querySelector("#darkseid");
@@ -196,7 +194,6 @@ let seid = document.querySelector("#seid");
 
 start.addEventListener("mouseover", ()=>{
     darseid.style.opacity = 1;
-    seid.style.backgroundColor = "yellow";
 });
 
 start.addEventListener("click", ()=>{

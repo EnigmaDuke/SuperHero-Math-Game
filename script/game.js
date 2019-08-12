@@ -5,6 +5,7 @@ let score = document.querySelector("#score");
 let hits = document.querySelector("#hits");
 let miss = document.querySelector("#miss");
 let currentLvl = document.querySelector("#level");
+let home = document.querySelector("#home");
 let hitTracker = 0;
 let missTracker = 0;
 let scoreTracker = 0;
@@ -32,12 +33,17 @@ playGame.addEventListener("click", ()=>{
   // alert(age.value);
 });
 
-//remove click button Name must be mandatory
-let close = document.querySelector(".close");
-close.addEventListener("click", ()=>{
-  userInfo.style.display = "none";
-  // gameRules.style.display = "none";
+//go back to main page at the end of game
+home.addEventListener("click", ()=>{
+  window.location.href = "index.html";
 });
+
+//remove click button Name must be mandatory
+// let close = document.querySelector(".close");
+// close.addEventListener("click", ()=>{
+//   userInfo.style.display = "none";
+//   // gameRules.style.display = "none";
+// });
 
 
 // div following the cursor
@@ -149,6 +155,7 @@ function subtractNumbers(){
 
 // End of Game stats
 let endGameSection = document.querySelector("#endGame");
+let endOfGame = document.querySelector("#endOfGame");
 let playerName = document.querySelector("#playerName");
 let playerAge = document.querySelector("#playerAge");
 let finalScore = document.querySelector("#finalScore");
@@ -156,16 +163,18 @@ let finalHits = document.querySelector("#finalHits");
 let finalMiss = document.querySelector("#finalMiss");
 
 let endGame = ()=>{
+  cursor.style.display = "none";
   endGameSection.style.display = "block";
+  endOfGame.style.display = "block";
   playerName.innerHTML = name.value;
   playerAge.innerHTML = age.value;
   finalScore.innerHTML = scoreTracker;
   finalHits.innerHTML = hitTracker;
   finalMiss.innerHTML = missTracker;
+
   for(i = 0; i < imgContainer.length; i++){
     imgContainer[i].style.display = "none";
   }
-
 }
 
 // --------- LEVEL 1 ---------
@@ -174,7 +183,7 @@ let level1 = function()
 {
   currentLvl.innerHTML = 1;
   gameState = 1;
-  timer(5, gameState);
+  timer(90, gameState);
   randomPosition();
   result = addNumbers();
   displayResults();
@@ -184,7 +193,6 @@ let level1 = function()
     imgContainer[i].addEventListener("click", findResult);
   }
 }
-
   //Display Random number on images
   function displayResults(){
     //loop through array of images
@@ -214,6 +222,7 @@ let level1 = function()
       hits.innerHTML = hitTracker;
       reload();
       randomPosition();
+     
       return hitTracker;
     } 
     else 
@@ -223,11 +232,23 @@ let level1 = function()
       missTracker++;
       this.style.display = "none";
       miss.innerHTML = missTracker;
-      if(missTracker == 9)
+      //if score goes below 0
+      if(scoreTracker < 0 || missTracker == 6)
       {
-        //when game over display a modal to ask to retry or go to the main menu
-        gameOver();
+        cursor.style.display = "none";
+        endGameSection.style.display = "block";
+        endOfGame.style.display = "block";
+        playerName.innerHTML = name.value;
+        playerAge.innerHTML = age.value;
+        finalScore.innerHTML = scoreTracker;
+        finalHits.innerHTML = hitTracker;
+        finalMiss.innerHTML = missTracker;
+      
+        for(i = 0; i < imgContainer.length; i++){
+          imgContainer[i].style.display = "none";
+        }
       }
+
       return missTracker;
     }
   }
@@ -244,7 +265,7 @@ let level2 = function()
 {
   currentLvl.innerHTML = 2;
   gameState = 2;
-  timer(5, gameState);
+  timer(120, gameState);
   randomPosition();
   subResult = subtractNumbers();
   displaySubResults();
@@ -296,11 +317,21 @@ function findSubResult()
     this.style.display = "none";
     miss.innerHTML = missTracker;
   }
-  if(missTracker == 9)
-    {
-      //when game over display a modal to ask to retry or go to the main menu
-      gameOver();
+  if(scoreTracker < 0 || missTracker == 6)
+  {
+    cursor.style.display = "none";
+    endGameSection.style.display = "block";
+    endOfGame.style.display = "block";
+    playerName.innerHTML = name.value;
+    playerAge.innerHTML = age.value;
+    finalScore.innerHTML = scoreTracker;
+    finalHits.innerHTML = hitTracker;
+    finalMiss.innerHTML = missTracker;
+  
+    for(i = 0; i < imgContainer.length; i++){
+      imgContainer[i].style.display = "none";
     }
+  }
     return missTracker;
 }
 //reload game
@@ -317,7 +348,7 @@ let level3 = function()
 {
   currentLvl.innerHTML = 3;
   gameState = 4
-  timer(5, gameState);
+  timer(150, gameState);
   randomPosition();
   divResult = divideNumbers();
   displayDivResults();
@@ -375,6 +406,10 @@ function findDivResult()
     hits.innerHTML = hitTracker;
     divReload();
     randomPosition();
+    if(scoreTracker < 0)
+    {
+      gameOver();
+    }
     return scoreTracker;
   } 
   else 
@@ -385,11 +420,21 @@ function findDivResult()
     this.style.display = "none";
     miss.innerHTML = missTracker;
   }
-  if(missTracker == 9)
-    {
-      //when game over display a modal to ask to retry or go to the main menu
-      gameOver();
+  if(scoreTracker < 0 || missTracker == 6)
+  {
+    cursor.style.display = "none";
+    endGameSection.style.display = "block";
+    endOfGame.style.display = "block";
+    playerName.innerHTML = name.value;
+    playerAge.innerHTML = age.value;
+    finalScore.innerHTML = scoreTracker;
+    finalHits.innerHTML = hitTracker;
+    finalMiss.innerHTML = missTracker;
+  
+    for(i = 0; i < imgContainer.length; i++){
+      imgContainer[i].style.display = "none";
     }
+  }
     return missTracker;
 }
 
