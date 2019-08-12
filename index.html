@@ -23,6 +23,7 @@
            <audio id="batmanAud" src="audio/DC/LEGO Batman Music - Title Screen.mp3"></audio>
            <audio id="villainAud" src="audio/DC/villain/OFFICIAL - The Red Capes Are Coming - Batman v Superman Soundtrack - Hans Zimmer & Junkie XL.mp3"></audio>
            <audio id="spideyAud" src="audio/marvel/Spider-Man 2 (2004) Main Title by Danny Elfman (HD 1080p).mp3"></audio>
+           <audio id="marvelVillainAud" src="audio/marvel/villain/Xmen Magneto Super Theme Song.mp3"></audio>
           </i>
         </li>
        <li><i id="soundOff" class="fas fa-volume-off fa-2x"></i></li>
@@ -37,7 +38,6 @@
   <main>
     <p><span>Click Start to play</span></p>
     <div id="mainGrid">
-      <a href="#">
         <div class="levelContainer" id="levelOne">
           <h3>Level 1</h3>
           <p>Addition</p>
@@ -45,8 +45,6 @@
             <p>Example: 5 + 9 = 14</p>
           </div>
         </div>  
-      </a> 
-      <a href="#">
         <div class="levelContainer" id="levelTwo">
           <h3>Level 2</h3>
           <p>Subtraction</p>
@@ -54,8 +52,6 @@
             <p>Example: 9 - 7 = 2</p>
           </div>
         </div>  
-      </a>
-      <a href="#">
         <div class="levelContainer" id="levelThree">
           <h3>Level 3</h3>
           <p>Division</p>
@@ -63,7 +59,6 @@
             <p>Example: 6 / 2 = 3</p>
           </div>
         </div>
-      </a>
     </div>
     </div>
   </main>
@@ -87,6 +82,17 @@
       <div id="rulesContainer">
         <span class="close">&times;</span>
         <h4>Rules of the Game</h4>
+        <div>
+          <ul>
+            <li>Player will go through 3 levels</li>
+            <li>At the end of each level the following level will start immediately</li>
+            <li>Level 1 is 90 seconds long</li>
+            <li>Level 2 is 120 seconds long</li>
+            <li>Level 3 is 150 seconds long</li>
+            <li>Each right answer is worth 2 points</li>
+            <li>Each wrong answer will deduct 1 point</li>
+          </ul>
+        </div>
       </div>
   </section>
 
@@ -105,6 +111,7 @@
           <img src="images/heros/DC/superman.png" alt="">
         </div>
       </div>
+      <!-- Marvel heroes -->
     <div class="container" id="marvelHeroes">
       <div>
         <img src="images/heros/Marvel/bp.png" alt="">
@@ -116,6 +123,7 @@
         <img src="images/heros/Marvel/ironman.png" alt="">
       </div>
     </div>
+
     <!-- DC Villains -->
     <div class="container" id="dcVillains">
         <div>
