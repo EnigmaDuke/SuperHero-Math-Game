@@ -400,7 +400,8 @@ h2:hover{
     margin-top:100px;
   }
   .levelContainer{
-    width:140px;
+    width:110px;
+    padding:5px;
     font-size:0.8rem;
     line-height: 1.4rem;
   }
