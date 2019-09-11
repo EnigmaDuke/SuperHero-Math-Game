@@ -385,7 +385,7 @@ h2:hover{
   }
 
   .logo{
-    width:75px;
+    width:50px;
     z-index:100;
   }
 
@@ -402,7 +402,7 @@ h2:hover{
     font-size:0.7rem;
     position: relative;
     top:-15px;
-    left:-44px;
+    left:0px;
   }
 
  #soundOn, #soundOff{
