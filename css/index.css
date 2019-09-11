@@ -383,9 +383,15 @@ h2:hover{
   header{
     margin-top:50px;
   }
+
   .logo{
-    width:100px;
+    width:75px;
     z-index:100;
+  }
+
+  h1 img{
+    width:50px;
+    left:18px;
   }
 
   #logoSwitchText{
@@ -406,18 +412,21 @@ h2:hover{
   #dark{
     font-size:15px;
     position: relative;
-    top:-7px;
+    top:1px;
   }
 
   #soundOff, #soundOn{
     position: relative;
-    top:-5px;
-  
+    top:3px;
+  }
+
+  #soundOn{
+    left:-7px;
   }
 
   #mainGrid{
     width:100%;
-    margin-top:100px;
+    margin-top:75px;
     justify-content: center;
   }
 
