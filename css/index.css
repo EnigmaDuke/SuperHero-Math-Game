@@ -379,6 +379,10 @@ h2:hover{
 /* Phone Size */
 @media only screen and (max-width: 600px)
 {
+
+  header{
+    margin-top:50px;
+  }
   .logo{
     width:100px;
     z-index:100;
