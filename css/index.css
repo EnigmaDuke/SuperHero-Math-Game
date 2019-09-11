@@ -408,10 +408,13 @@ h2:hover{
     line-height: 1.4rem;
   }
 
-  /* #heroes{
+  .visible{
     display: none;
-    clear:both;
-  } */
+  }
+
+  .middleImg{
+    display:block;
+  } 
 
   #start{
     top:150px;
@@ -457,11 +460,6 @@ h2:hover{
     font-size:0.8rem;
     line-height: 1.4rem;
   }
-
-  /* #heroes{
-    display: none;
-    clear:both;
-  } */
 
   .visible{
     display: none;
