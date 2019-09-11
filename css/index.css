@@ -400,7 +400,7 @@ h2:hover{
     margin-top:100px;
     justify-content: center;
   }
-  
+
   .levelContainer{
     width:110px;
     padding:5px;
@@ -408,10 +408,10 @@ h2:hover{
     line-height: 1.4rem;
   }
 
-  #heroes{
+  /* #heroes{
     display: none;
     clear:both;
-  }
+  } */
 
   #start{
     top:150px;
@@ -422,5 +422,62 @@ h2:hover{
   #rules{
     top:150px;
     left:-100px;
+  }
+}
+
+/* Mobile  > 400 */
+@media only screen and (max-width: 400px)
+{
+  .logo{
+    width:80px;
+  }
+
+  #logoSwitchText{
+    font-size:0.2rem;
+  }
+  header h1{
+    font-size:1rem;
+    position: relative;
+    left:-30px;
+  }
+
+  #dark, #soundOn{
+    font-size:20px;
+  }
+
+  #mainGrid{
+    width:100%;
+    margin-top:100px;
+    justify-content: center;
+  }
+
+  .levelContainer{
+    width:100px;
+    padding:5px;
+    font-size:0.8rem;
+    line-height: 1.4rem;
+  }
+
+  /* #heroes{
+    display: none;
+    clear:both;
+  } */
+
+  .visible{
+    display: none;
+  }
+
+  .middleImg{
+    display:block;
+  } 
+
+  #start{
+    top:150px;
+    left:50px;
+  }
+  
+  #rules{
+    top:150px;
+    left:-50px;
   }
 }
