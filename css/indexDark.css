@@ -16,6 +16,7 @@
 body{
   background-color:black;
   background-image:url("../images/background_images/gotham.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position:center;
   background-size:cover;
@@ -48,12 +49,15 @@ a{
 
 header{
   padding:20px;
-
 }
 
 header img{
   width:100px;
   margin:0 auto;
+}
+
+#soundOn, #soundOff{
+  color:#fff;
 }
 
 #logoSwitchText{
@@ -136,6 +140,10 @@ h1 img{
 main{
   width:100%;
   text-align: center;
+}
+
+main span{
+  color:#fff;
 }
 
 #mainGrid{
@@ -388,7 +396,7 @@ div:before
 }
 
 /* Phone Size */
-@media only screen and (max-width: 500px)
+/* @media only screen and (max-width: 500px)
 {
   .logo{
     width:80px;
@@ -424,5 +432,89 @@ div:before
   #heroes{
     display: none;
     clear:both;
+  }
+} */
+
+@media only screen and (max-width: 600px)
+{
+
+  header{
+    margin-top:50px;
+  }
+
+  .logo{
+    width:50px;
+    z-index:100;
+  }
+
+  h1 img{
+    width:50px;
+    left:18px;
+  }
+
+  #logoSwitchText{
+    font-size:0.2rem;
+  }
+
+  header h1{
+    font-size:0.7rem;
+    position: relative;
+    top:-15px;
+    left:0px;
+  }
+
+ #soundOn, #soundOff{
+    font-size:20px;
+  }
+
+  #light{
+    font-size:15px;
+    position: relative;
+    top:1px;
+  }
+
+  #soundOff, #soundOn{
+    position: relative;
+    top:3px;
+  }
+
+  #soundOn{
+    left:-7px;
+  }
+
+  #mainGrid{
+    width:100%;
+    margin-top:75px;
+    justify-content: center;
+  }
+
+  .levelContainer{
+    width:110px;
+    padding:5px;
+    font-size:0.8rem;
+    line-height: 1.4rem;
+  }
+
+  .visible{
+    display: none;
+  }
+
+  .middleImg{
+    display:block;
+  } 
+
+  #start{
+    top:150px;
+    left:100px;
+  }
+  
+  /* Game Rules */
+  #rules{
+    top:150px;
+    left:-100px;
+  }
+
+  #darkseid{
+    opacity: 1;
   }
 }
