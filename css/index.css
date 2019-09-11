@@ -455,6 +455,11 @@ h2:hover{
     top:150px;
     left:-100px;
   }
+
+  #rulesContainer{
+    width:80%;
+    height:50vh;
+  }
 }
 
 /* Mobile  > 400 */
