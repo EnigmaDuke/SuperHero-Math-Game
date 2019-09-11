@@ -152,6 +152,7 @@ main span{
   margin:0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
 }
 
 h3{
@@ -187,6 +188,7 @@ h2:hover{
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: center;
 }
 
 #startRules div{
@@ -214,8 +216,6 @@ h2:hover{
   top:150px;
   left:200px;
 }
-
-
 
 /* Game Rules */
 #rules{
@@ -408,5 +408,16 @@ h2:hover{
   #heroes{
     display: none;
     clear:both;
+  }
+
+  #start{
+    top:150px;
+    left:100px;
+  }
+  
+  /* Game Rules */
+  #rules{
+    top:150px;
+    left:-100px;
   }
 }
