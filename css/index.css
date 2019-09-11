@@ -34,6 +34,7 @@ a{
 .show{
   display:block;
 }
+
 /* Header */
 .logo{
   position: relative;
@@ -379,12 +380,14 @@ h2:hover{
 @media only screen and (max-width: 600px)
 {
   .logo{
-    width:50px;
+    width:100px;
+    z-index:100;
   }
 
   #logoSwitchText{
     font-size:0.2rem;
   }
+
   header h1{
     font-size:0.7rem;
     position: relative;
