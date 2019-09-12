@@ -45,7 +45,6 @@ a{
 
 header{
   padding:20px;
-
 }
 
 header img{
@@ -402,7 +401,7 @@ h2:hover{
     font-size:0.7rem;
     position: relative;
     top:-15px;
-    left:0px;
+    /* left:-20px; */
   }
 
  #soundOn, #soundOff{
@@ -457,8 +456,8 @@ h2:hover{
   }
 
   #rulesContainer{
-    width:80%;
-    height:50vh;
+    width:90%;
+    height:55vh;
   }
 }
 

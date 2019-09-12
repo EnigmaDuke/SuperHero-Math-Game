@@ -101,9 +101,20 @@ function timer(seconds, gamestate)
 function randomPosition()
 {
   for (i = 0; i < imgContainer.length; i++)
-  {
+  // {
+  //   imgContainer[i].style.top = getRandomNum(374) + "px";
+  //   imgContainer[i].style.left = getRandomNum(1150) + "px";
+  //   imgContainer[i].style.display = "block";
+  // }
+   {
     imgContainer[i].style.top = getRandomNum(374) + "px";
-    imgContainer[i].style.left = getRandomNum(1150) + "px";
+    console.log(window.innerWidth);
+    if(window.innerWidth >= 1000){
+      imgContainer[i].style.left = getRandomNum(1150) + "px";
+    } else if(window.innerWidth >= 300 &&  window.innerWidth <= 600){
+      imgContainer[i].style.left = getRandomNum(300) + "px";
+    }
+    
     imgContainer[i].style.display = "block";
   }
 }

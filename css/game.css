@@ -145,6 +145,8 @@ body{
 /*  Main */
 
 main{
+  border:5px dashed red;
+  box-sizing: border-box;
   position: relative;
   width:100%;
   height:74vh;
@@ -417,4 +419,103 @@ footer p, li{
 
 #gameInfo{
   width:100%;
+}
+
+/* Phone Size */
+@media only screen and (max-width: 600px)
+{
+
+  header{
+    margin-top:50px;
+  }
+
+  .logo{
+    width:50px;
+    z-index:100;
+  }
+
+  h1 img{
+    width:50px;
+    left:18px;
+  }
+
+  header h1{
+    font-size:0.7rem;
+    position: relative;
+    top:-15px;
+    /* left:-20px; */
+  }
+
+ #soundOn, #soundOff{
+    font-size:20px;
+  }
+
+  #soundOff, #soundOn{
+    position: relative;
+    top:3px;
+  }
+
+  #soundOn{
+    left:-7px;
+  }
+
+  #name{
+    width:90%;
+  }
+
+  main img{
+    width:50%;
+  }
+
+  .generatedNum{
+    font-size:1.5rem;
+  }
+
+  #lanternLogo{
+    width:50px;
+    height:50px;
+  }
+
+  #flashLogo{
+    width:55px;
+    height:67px;
+  }
+  
+  #wwLogo{
+    width:78px;
+    height:38px;
+  }
+  
+  #aquaLogo{
+    width:40px;
+    height:47px;
+  }
+  
+  #supesLogo{
+    width:60px;
+    height:45px;
+  }
+
+  #batLogo{
+    width:78px;
+    height:58px;
+  }
+
+  /* #cursor{
+    width:70px;
+    height:20px;
+    padding:5px 10px;
+    background-color:#fff;
+    position: fixed;
+    transition:0.1s;
+    border:1px solid black;
+    border-radius:10px;
+    z-index: 200;
+    text-align:center;
+  } */
+  footer ul p{
+    font-size:1rem;
+    /* padding-top:47.9px; */
+  
+  }
 }
