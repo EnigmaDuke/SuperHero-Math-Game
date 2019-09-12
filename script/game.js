@@ -47,13 +47,29 @@ home.addEventListener("click", ()=>{
 
 
 // div following the cursor
-document.addEventListener('mousemove', function(e)
-{
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
-});
+if(window.innerWidth >= 1000){
+  document.addEventListener('mousemove', function(e)
+  {
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+  });
+}
+
+
+console.log(window.innerWidth);
+if(window.innerWidth >= 300 &&  window.innerWidth <= 600){
+  document.removeEventListener('mousemove', function(e)
+  {
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+  });
+}
+
+
 
 // Game countdown timer
 function timer(seconds, gamestate)
@@ -129,6 +145,39 @@ function moveElement(){
   }
 }
 
+// $(document).ready(randMove);
+
+function randMove(){
+  for (i = 0; i < imgContainer.length; i++){
+    animateDiv(imgContainer[i]);
+  }
+}
+
+function makeNewPosition(){
+    
+  // Get viewport dimensions (remove the dimension of the div)
+  var h = $(window).height() - 300;
+  var w = $(window).width() - 150;
+  
+  var nh = Math.floor(Math.random() * h);
+  var nw = Math.floor(Math.random() * w);
+  
+  return [nh,nw];    
+  
+}
+
+function animateDiv(myClass)
+{
+  var newq = makeNewPosition();
+  $(myClass).animate(
+  {
+    top: newq[0], left: newq[1] 
+  }, 5000, function()
+  {
+    animateDiv(myClass);
+  });
+};
+
 //Generate Random number
 function getRandomNum(num)
 {
@@ -196,6 +245,7 @@ let level1 = function()
   gameState = 1;
   timer(90, gameState);
   randomPosition();
+  randMove();
   result = addNumbers();
   displayResults();
   cursor.style.display = "block";
