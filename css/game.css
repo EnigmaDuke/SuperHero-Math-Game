@@ -134,6 +134,7 @@ body{
   padding:5px 10px;
   background-color:#fff;
   position: absolute;
+  top:-50px;
   transition:0.1s;
   pointer-events: none;
   border:1px solid black;
@@ -145,7 +146,7 @@ body{
 /*  Main */
 
 main{
-  border:5px dashed red;
+  border:10px dashed red;
   box-sizing: border-box;
   position: relative;
   width:100%;
@@ -389,7 +390,7 @@ justify-content: center;
 /* --- --- --- Footer --- --- --- */
 footer{
   width:100%;
-  height:10vh;
+  height:9.5vh;
   background-color:var(--dcYellow);
   /* position: relative; */
   /* top:63.5vh; */
@@ -459,7 +460,7 @@ footer p, li{
     left:-7px;
   }
 
-  #name{
+  #name, #endOfGame{
     width:90%;
   }
 

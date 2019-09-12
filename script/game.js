@@ -243,7 +243,7 @@ let level1 = function()
 {
   currentLvl.innerHTML = 1;
   gameState = 1;
-  timer(90, gameState);
+  timer(5, gameState);
   randomPosition();
   randMove();
   result = addNumbers();
@@ -326,7 +326,7 @@ let level2 = function()
 {
   currentLvl.innerHTML = 2;
   gameState = 2;
-  timer(120, gameState);
+  timer(5, gameState);
   randomPosition();
   subResult = subtractNumbers();
   displaySubResults();
@@ -409,7 +409,7 @@ let level3 = function()
 {
   currentLvl.innerHTML = 3;
   gameState = 4
-  timer(150, gameState);
+  timer(5, gameState);
   randomPosition();
   divResult = divideNumbers();
   displayDivResults();

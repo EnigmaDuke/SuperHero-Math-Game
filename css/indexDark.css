@@ -151,6 +151,7 @@ main span{
   margin:0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
 }
 
 h3{
@@ -183,9 +184,11 @@ h2:hover{
 
 #startRules{
   width:100%;
+  height:5px;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: center;
 }
 
 #startRules div{
@@ -231,6 +234,7 @@ h2:hover{
   position: fixed;
   top:0;
   display:none;
+  z-index:5;
 }
 
 #rulesContainer{
@@ -241,7 +245,6 @@ h2:hover{
   border-radius:15px;
   position: relative;
   top:25%;
-  z-index:1;
   margin:0 auto;
   color:#fff;
   font-family: sans-serif;
@@ -263,6 +266,14 @@ h2:hover{
 
 #rulesContainer li{
   line-height: 2rem;
+}
+
+.close{
+  font-size:2rem;
+  float:right;
+  padding-right:20px;
+  color:white;
+  cursor:pointer;
 }
 
 /* Heroes */
@@ -294,6 +305,7 @@ h2:hover{
   animation:rotate 5s linear infinite; 
   opacity: 0.1;
   transition:all 6s;
+  z-index:0;
 }
 
 #seid{
