@@ -447,6 +447,7 @@ div:before
   }
 } */
 
+/* Phone */
 @media only screen and (max-width: 600px)
 {
 
@@ -496,7 +497,7 @@ div:before
 
   #mainGrid{
     width:100%;
-    margin-top:75px;
+    margin-top:25px;
     justify-content: center;
   }
 

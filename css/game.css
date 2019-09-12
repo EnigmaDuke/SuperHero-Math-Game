@@ -502,21 +502,8 @@ footer p, li{
     height:58px;
   }
 
-  /* #cursor{
-    width:70px;
-    height:20px;
-    padding:5px 10px;
-    background-color:#fff;
-    position: fixed;
-    transition:0.1s;
-    border:1px solid black;
-    border-radius:10px;
-    z-index: 200;
-    text-align:center;
-  } */
   footer ul p{
     font-size:1rem;
     /* padding-top:47.9px; */
-  
   }
 }
