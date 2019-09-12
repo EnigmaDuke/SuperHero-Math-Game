@@ -502,6 +502,10 @@ footer p, li{
     height:58px;
   }
 
+  footer{
+    height:8vh;
+  }
+
   footer ul p{
     font-size:1rem;
     /* padding-top:47.9px; */
