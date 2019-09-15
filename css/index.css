@@ -322,11 +322,7 @@ h2:hover{
    
   }
 
-  /* #mainGrid{
-    width:100%;
-    margin-top:25px;
-    justify-content: center;
-  } */
+  
 
   #heroesContainer{
     margin-top:50px;
@@ -339,6 +335,25 @@ h2:hover{
   #startRules div{
     width:200px;
     padding:10px;
+  }
+
+  main span{
+    font-size:1.4rem;
+    letter-spacing:3px;
+  }
+
+  .levelContainer{
+    width:240px;
+    padding:10px;
+  }
+
+  .levelContainer h3{
+    font-size:1.6rem;
+  }
+
+  .levelContainer p{
+    font-size:1.2rem;
+    letter-spacing:2px;
   }
 }
 
@@ -382,6 +397,7 @@ h2:hover{
     width:100%;
     margin-top:100px;
   }
+
   .levelContainer{
     width:140px;
     font-size:0.8rem;
