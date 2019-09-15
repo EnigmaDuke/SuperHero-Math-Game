@@ -241,6 +241,10 @@ h2:hover{
   display:none;
 }
 
+#gameRules h4{
+  text-transform: uppercase;
+}
+
 #rulesContainer{
   width:50%;
   height:50vh;
@@ -356,7 +360,7 @@ h2:hover{
   }
 
   #heroesContainer img{
-      height:600px;
+    height:600px;
   }
 
   #startRules div{
@@ -390,6 +394,19 @@ h2:hover{
   #soundOn, #soundOff{
     font-size:45px;
   }
+
+  #rulesContainer{
+    width:40%;
+    height:55vh;
+  }
+
+  #rulesContainer li{
+    font-size:1.3rem; 
+    line-height:2.5rem;
+    letter-spacing: 2px;
+  }
+
+
 }
 
 /* Full Screen */
