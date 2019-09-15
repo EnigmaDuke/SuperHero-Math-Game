@@ -63,6 +63,8 @@ header ul{
   top:-35px;
 }
 
+
+
 #logoSwitchText{
   color:var(--dcYellow);
 }
@@ -100,7 +102,7 @@ header p{
 h1{
   margin:0;
   padding:0;
-  text-align: center;
+  /* text-align: center; */
   text-transform: uppercase;
   font-family: sans-serif;
   letter-spacing: 2px;
@@ -112,6 +114,11 @@ h1 img{
   position: relative;
   left:20px;
   top:8px;
+}
+
+#gameTitle{
+  display: table; 
+  margin:0 auto;
 }
 
 #soundOn, #soundOff{
@@ -322,7 +329,27 @@ h2:hover{
    
   }
 
-  
+  header{
+    padding:20px 100px;
+  }
+
+  #marvelLogo, #dcLogo{
+    width:150px;
+  }
+
+  #logoSwitchText{
+    font-size:1.2rem;
+    position: relative;
+    top:15px;
+    left:-200px;
+  }
+
+  #gameTitle{
+    display: table;
+    margin:0 auto;
+    position: relative;
+    left:-85px;
+  }
 
   #heroesContainer{
     margin-top:50px;
@@ -354,6 +381,14 @@ h2:hover{
   .levelContainer p{
     font-size:1.2rem;
     letter-spacing:2px;
+  }
+
+  #dark, #light{
+
+  }
+
+  #soundOn, #soundOff{
+    
   }
 }
 
