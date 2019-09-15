@@ -304,6 +304,7 @@ form{
   margin:0 auto;
   text-align: center;
   transition: all 0.3s;
+  text-transform: uppercase;
 }
 
 #play:hover{
@@ -428,88 +429,44 @@ footer p, li{
 /* 4k Monitor */
 @media only screen and (min-width:2000px)
 {
-  body{
-   
+
+  #name, #endOfGame{
+    width:35%;
+  } 
+
+  #name h2, #endOfGame h2{
+    font-size:2rem;
   }
 
-  header{
-    padding:20px 100px;
-  }
-
-  #marvelLogo, #dcLogo{
-    width:150px;
-  }
-
-  #logoSwitchText{
-    font-size:1.2rem;
-    position: relative;
-    top:15px;
-    left:-200px;
-  }
-
-  #gameTitle{
-    display: table;
-    margin:0 auto;
-    position: relative;
-    left:-85px;
-  }
-
-  #heroesContainer{
-    margin-top:50px;
-  }
-
-  #heroesContainer img{
-    height:600px;
-  }
-
-  #startRules div{
-    width:200px;
-    padding:10px;
-  }
-
-  main span{
-    font-size:1.4rem;
-    letter-spacing:3px;
-  }
-
-  .levelContainer{
-    width:240px;
-    padding:10px;
-  }
-
-  .levelContainer h3{
-    font-size:1.6rem;
-  }
-
-  .levelContainer p{
-    font-size:1.2rem;
+  #name label, #endOfGame label{
+    font-size:1.5rem;
     letter-spacing:2px;
   }
 
-  #dark, #light{
-    font-size:40px;
+  .field input{
+    width:300px;
+    padding:10px;
   }
 
-  #soundOn, #soundOff{
-    font-size:45px;
+  #play{
+    width:200px;
+    padding:15px;
   }
 
-  #rulesContainer{
-    width:40%;
-    height:55vh;
+  #home{
+    width:200px;
+    height:40px;
+    padding:10px;
   }
 
-  #rulesContainer li{
-    font-size:1.3rem; 
-    line-height:2.5rem;
-    letter-spacing: 2px;
+  footer{
+    height:11vh;
   }
 }
 
 /* Phone Size */
 @media only screen and (max-width: 600px)
 {
-
   header{
     margin-top:50px;
   }
