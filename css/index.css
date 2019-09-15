@@ -315,6 +315,33 @@ h2:hover{
 
 /* Media Queries */
 
+/* 4k Monitor */
+@media only screen and (min-width:2000px)
+{
+  body{
+   
+  }
+
+  /* #mainGrid{
+    width:100%;
+    margin-top:25px;
+    justify-content: center;
+  } */
+
+  #heroesContainer{
+    margin-top:50px;
+  }
+
+  #heroesContainer img{
+      height:600px;
+  }
+
+  #startRules div{
+    width:200px;
+    padding:10px;
+  }
+}
+
 /* Full Screen */
 @media only screen and (min-width:1300px)
 {
