@@ -405,8 +405,6 @@ h2:hover{
     line-height:2.5rem;
     letter-spacing: 2px;
   }
-
-
 }
 
 /* Full Screen */
@@ -422,7 +420,18 @@ h2:hover{
 
 @media only screen and (max-width:1000px)
 {
+  #mainGrid{
+    width:100%;
+    justify-content: center;
+  }
 
+  #start{
+    left:-10px;
+  }
+
+  #rules{
+    left:10px;
+  }
 }
 
 /* Tablet */
@@ -459,16 +468,23 @@ h2:hover{
   .container img{
     height:290px;
   }
-  #startRules{
-    display:block;
+  /* #startRules{
+    /* display:inline-block; 
   }
 
   #start{
+    left:-20px;
+  }
+  #rules{
+    left:20px;
+  } */
+
+  /* #start{
     float:left;
   }
   #rules{
     float:right;
-  }
+  } */
 }
 
 /* Phone Size */
@@ -542,13 +558,13 @@ h2:hover{
 
   #start{
     top:150px;
-    left:100px;
+    left:50px;
   }
   
   /* Game Rules */
   #rules{
     top:150px;
-    left:-100px;
+    left:-50px;
   }
 
   #rulesContainer{
